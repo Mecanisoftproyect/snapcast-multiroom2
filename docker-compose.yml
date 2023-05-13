@@ -186,7 +186,6 @@ services:
     restart: unless-stopped
 
   shairportSync-main:
-    restart: always
     image: kevineye/shairport-sync
     network_mode: host
     environment:
