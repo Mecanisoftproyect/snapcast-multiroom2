@@ -1,6 +1,6 @@
-FROM debian:9.0
+FROM debian:11
 
-ARG  snapcast_version=0.17.1
+ARG  snapcast_version=0.27.0
 ENV  STREAM_NAME Snapserver
 
 RUN  apt-get update \
