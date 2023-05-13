@@ -91,20 +91,20 @@ services:
       - proxy-local
     restart: unless-stopped
 
-  pifi:
-    image: registry.local:5000/pifi
-    build: ./pifi.radio
-    depends_on:
-      - radio
-    ports: 
-      - 3000
-    volumes:
-      - /data/swarm/multiroom/pifi.radio/streams.json:/etc/pifi/streams.json
-      - /data/swarm/multiroom/pifi.radio/config.json:/etc/pifi/config.json
-    networks:
-      - snapcast
-      - proxy-local
-    restart: unless-stopped
+ # pifi:
+ #   image: registry.local:5000/pifi
+ #   build: ./pifi.radio
+ #   depends_on:
+ #     - radio
+ #   ports: 
+ #     - 3000
+ #   volumes:
+ #     - /data/swarm/multiroom/pifi.radio/streams.json:/etc/pifi/streams.json
+ #     - /data/swarm/multiroom/pifi.radio/config.json:/etc/pifi/config.json
+ #   networks:
+ #     - snapcast
+ #     - proxy-local
+ #   restart: unless-stopped
 
   mpdfm:
     image: registry.local:5000/mpdfm
@@ -212,7 +212,7 @@ services:
         - "20000:20000"
 #        - "36600:36600"
     environment:
-      - TZ=Europe/Moscow
+      - TZ=America/Guayaquil
 #    networks:
 #        - snapcast
     volumes:
@@ -244,7 +244,7 @@ services:
     build: ./upmpdcli
     network_mode: host
     environment:
-      - TZ=Europe/Moscow
+      - TZ=America/Guayaquil
     volumes:
       - /data/swarm/multiroom/upmpdcli/mpd.conf:/etc/mpd.conf
       - fifo:/fifo/
